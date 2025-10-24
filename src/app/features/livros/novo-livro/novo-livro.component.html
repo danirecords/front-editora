@@ -1,0 +1,28 @@
+<h2>{{ isEdit ? 'Editar' : 'Novo' }} Livro</h2>
+
+<form (ngSubmit)="salvar()" #form="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Título</mat-label>
+    <input matInput name="titulo" [(ngModel)]="livro.Titulo" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Editora</mat-label>
+    <input matInput name="editora" [(ngModel)]="livro.Editora" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Edição</mat-label>
+    <input matInput name="edicao" [(ngModel)]="livro.Edicao" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Ano de Publicação</mat-label>
+    <input matInput name="anoPublicacao" [(ngModel)]="livro.AnoPublicacao" required />
+  </mat-form-field>
+
+  <div class="botoes">
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+    <button mat-stroked-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>

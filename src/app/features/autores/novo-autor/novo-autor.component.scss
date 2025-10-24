@@ -1,0 +1,17 @@
+mat-card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

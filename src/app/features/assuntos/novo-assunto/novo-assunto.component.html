@@ -1,0 +1,13 @@
+<h2>{{ isEdit ? 'Editar' : 'Novo' }} Assunto</h2>
+
+<form (ngSubmit)="salvar()" #form="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput name="Descricao" [(ngModel)]="assunto.Descricao" required />
+  </mat-form-field>
+
+  <div class="botoes">
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+    <button mat-stroked-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>

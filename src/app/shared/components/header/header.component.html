@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span style="flex: 1 1 auto;">Editora</span>
+
+  <!-- Menu de Livros -->
+  <button mat-button [matMenuTriggerFor]="livrosMenu">Livros</button>
+  <mat-menu #livrosMenu="matMenu">
+    <button mat-menu-item routerLink="/livros">Listar Livros</button>
+    <button mat-menu-item routerLink="/livros/novo">Novo Livro</button>
+  </mat-menu>
+
+  <!-- Menu de Autores -->
+  <button mat-button [matMenuTriggerFor]="autoresMenu">Autores</button>
+  <mat-menu #autoresMenu="matMenu">
+    <button mat-menu-item routerLink="/autores">Listar Autores</button>
+    <button mat-menu-item routerLink="/autores/novo">Novo Autor</button>
+  </mat-menu>
+
+  <!-- Menu de Assuntos -->
+  <button mat-button [matMenuTriggerFor]="assuntosMenu">Assuntos</button>
+  <mat-menu #assuntosMenu="matMenu">
+    <button mat-menu-item routerLink="/assuntos">Listar Assuntos</button>
+    <button mat-menu-item routerLink="/assuntos/novo">Novo Assunto</button>
+  </mat-menu>
+</mat-toolbar>

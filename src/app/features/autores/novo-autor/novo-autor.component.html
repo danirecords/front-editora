@@ -1,0 +1,13 @@
+<h2>{{ isEdit ? 'Editar' : 'Novo' }} Autor</h2>
+
+<form (ngSubmit)="salvar()" #form="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput name="titulo" [(ngModel)]="autor.Nome" required />
+  </mat-form-field>
+
+  <div class="botoes">
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+    <button mat-stroked-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>
