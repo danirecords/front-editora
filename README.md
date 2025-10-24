@@ -1,22 +1,23 @@
-📚 Sistema de Editora – Frontend (Angular 17)
+# 📚 Sistema de Editora – Frontend (Angular 17)
 
-Aplicação frontend desenvolvida em Angular 17 com Angular Material, implementando o CRUD completo de Livros, Autores e Assuntos.
+Aplicação frontend desenvolvida em **Angular 17** com **Angular Material**, implementando o CRUD completo de **Livros**, **Autores** e **Assuntos**.
 
-🚀 Tecnologias utilizadas
+---
 
-Angular 17
+## 🚀 Tecnologias utilizadas
 
-Angular Material (UI components)
+- **Angular 17**  
+- **Angular Material** (UI components)  
+- **TypeScript**  
+- **RxJS**  
+- **HTML 5 / CSS 3 (Flex Layout)**  
+- **Comunicação HTTP** com API Laravel (backend)
 
-TypeScript
+---
 
-RxJS
+## 🧩 Estrutura do projeto
 
-HTML 5 / CSS 3 (Flex Layout)
-
-Comunicação HTTP com API Laravel (backend)
-
-🧩 Estrutura do projeto
+```
 src/
  ├── app/
  │   ├── features/
@@ -36,18 +37,22 @@ src/
  │   └── app.component.ts
  ├── assets/
  └── main.ts
+```
 
-⚙️ Pré-requisitos
+---
 
-Node.js 18+
+## ⚙️ Pré-requisitos
 
-npm ou yarn
+- **Node.js** 18+  
+- **npm** ou **yarn**  
+- **Angular CLI 17**  
+- **Backend Laravel** rodando em `http://localhost:8000` (ou outra URL configurada no serviço HTTP)
 
-Angular CLI 17
+---
 
-Backend Laravel rodando em http://localhost:8000 (ou outra URL configurada no serviço HTTP)
+## 🧰 Instalação
 
-🧰 Instalação
+```bash
 # 1. Clonar o repositório
 git clone https://github.com/seuusuario/editora-frontend.git
 cd editora-frontend
@@ -57,41 +62,42 @@ npm install
 
 # 3. Rodar o servidor de desenvolvimento
 ng serve
+```
 
+Acesse em:  
+👉 **http://localhost:4200**
 
-Acesse em:
-👉 http://localhost:4200
+---
 
-🧱 Estrutura de CRUDs
-📘 Livros
+## 🧱 Estrutura de CRUDs
 
-Listar livros: /livros
+### 📘 Livros
 
-Novo livro: /livros/novo
+- **Listar livros:** `/livros`  
+- **Novo livro:** `/livros/novo`  
+- **Editar livro:** `/livros/novo/:id`
 
-Editar livro: /livros/novo/:id
+### ✍️ Autores
 
-✍️ Autores
+- **Listar autores:** `/autores`  
+- **Novo autor:** `/autores/novo`  
+- **Editar autor:** `/autores/novo/:id`
 
-Listar autores: /autores
+### 🧾 Assuntos
 
-Novo autor: /autores/novo
+- **Listar assuntos:** `/assuntos`  
+- **Novo assunto:** `/assuntos/novo`  
+- **Editar assunto:** `/assuntos/novo/:id`
 
-Editar autor: /autores/novo/:id
+---
 
-🧾 Assuntos
+## 🎨 Layout e componentes
 
-Listar assuntos: /assuntos
-
-Novo assunto: /assuntos/novo
-
-Editar assunto: /assuntos/novo/:id
-
-🎨 Layout e componentes
-✅ Header (App Header)
+### ✅ Header (App Header)
 
 Barra superior com menus de navegação:
 
+```html
 <mat-toolbar color="primary">
   <span style="flex: 1 1 auto;">Editora</span>
 
@@ -113,11 +119,15 @@ Barra superior com menus de navegação:
     <button mat-menu-item routerLink="/assuntos/novo">Novo</button>
   </mat-menu>
 </mat-toolbar>
+```
 
-🔗 Comunicação com Backend
+---
 
-Os services utilizam o HttpClient para consumir a API Laravel:
+## 🔗 Comunicação com Backend
 
+Os services utilizam o `HttpClient` para consumir a API Laravel:
+
+```ts
 @Injectable({ providedIn: 'root' })
 export class LivroService {
   private apiUrl = 'http://localhost:8000/api/livros';
@@ -144,37 +154,45 @@ export class LivroService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
+```
 
-🧪 Scripts úteis
-Comando	Descrição
-npm start	Inicia o servidor local (ng serve)
-ng build	Gera build de produção
-ng generate component	Cria novo componente
-ng generate service	Cria novo serviço
-ng test	Executa testes unitários
-💅 Padrões de código
+---
 
-Componentes standalone (standalone: true)
+## 🧪 Scripts úteis
 
-Angular Material como biblioteca de UI
+| Comando | Descrição |
+|----------|------------|
+| `npm start` | Inicia o servidor local (`ng serve`) |
+| `ng build` | Gera build de produção |
+| `ng generate component` | Cria novo componente |
+| `ng generate service` | Cria novo serviço |
+| `ng test` | Executa testes unitários |
 
-RouterModule importado em cada componente que usa routerLink
+---
 
-Boas práticas de tipagem com interface e DTO
+## 💅 Padrões de código
 
-CSS modularizado por componente
+- Componentes **standalone** (`standalone: true`)  
+- Angular Material como biblioteca de UI  
+- `RouterModule` importado em cada componente que usa `routerLink`  
+- Boas práticas de tipagem com `interface` e `DTO`  
+- CSS modularizado por componente  
 
-📦 Build de produção
+---
+
+## 📦 Build de produção
+
+```bash
 ng build --configuration production
+```
 
+Os arquivos compilados ficarão em `dist/editora-frontend/`.
 
-Os arquivos compilados ficarão em dist/editora-frontend/.
+---
 
-🧑‍💻 Autor
+## 🧑‍💻 Autor
 
-Daniel Augusto Miranda de Oliveira
-📧 danirecords@terra.com
-
-🔗 LinkedIn
-
-💻 GitHub
+**Daniel Augusto Miranda de Oliveira**  
+📧 [danirecords@terra.com](mailto:danirecords@terra.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/daniel-oliveira-5b945831/)  
+💻 [GitHub](https://github.com/danirecords)
