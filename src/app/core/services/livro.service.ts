@@ -21,6 +21,7 @@ export class LivroService {
   }
 
   update(id: number, livro: any): Observable<any> {
+    console.log(livro)
     return this.http.put(`${this.apiUrl}/${id}`, livro);
   }
 

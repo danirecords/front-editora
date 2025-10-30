@@ -13,12 +13,30 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Edição</mat-label>
-    <input matInput name="edicao" [(ngModel)]="livro.Edicao" required />
+    <input type="number" matInput name="edicao" [(ngModel)]="livro.Edicao" required />
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Ano de Publicação</mat-label>
-    <input matInput name="anoPublicacao" [(ngModel)]="livro.AnoPublicacao" required />
+    <input type="number" matInput name="anoPublicacao" [(ngModel)]="livro.AnoPublicacao" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Autores</mat-label>
+    <mat-select name="autores" [(ngModel)]="livro.autores" multiple required>
+      <mat-option *ngFor="let autor of autores" [value]="autor.CodAu">
+        {{ autor.Nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Assuntos</mat-label>
+    <mat-select name="assuntos" [(ngModel)]="livro.assuntos" multiple required>
+      <mat-option *ngFor="let assunto of assuntos" [value]="assunto.codAs">
+        {{ assunto.Descricao }}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
   <div class="botoes">
